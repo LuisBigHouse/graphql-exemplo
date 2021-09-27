@@ -93,7 +93,11 @@ class MyApp extends StatelessWidget {
                                 subtitle: Text(
                                     "Status: ${result.data!['characters']['results'][index]['status']} \nLocation: ${result.data!['characters']['results'][index]['location']['name']}"),
                               ),
-                              const Divider(),
+                              const Divider(
+                                thickness: 1,
+                                indent: 16,
+                                endIndent: 16,
+                              ),
                             ],
                           );
                         },
