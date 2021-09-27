@@ -1,6 +1,8 @@
 # graphql_exemplo
 
-A new Flutter project.
+Exemplo de quary no GraphQL usando flutter.
+
+Referência: https://blog.waldo.io/graphql-in-flutter/
 
 ## Getting Started
 
