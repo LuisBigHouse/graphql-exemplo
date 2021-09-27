@@ -89,7 +89,7 @@ class MyApp extends StatelessWidget {
                             title: Text(
                                 "Name: ${result.data!['characters']['results'][index]['name']}"),
                             subtitle: Text(
-                                "Status: ${result.data!['characters']['results'][index]['status']} \nLocation:${result.data!['characters']['results'][index]['location']['name']}"),
+                                "Status: ${result.data!['characters']['results'][index]['status']} \nLocation: ${result.data!['characters']['results'][index]['location']['name']}"),
                           );
                         },
                       ),
