@@ -68,7 +68,7 @@ class MyApp extends StatelessWidget {
                 return Column(
                   children: [
                     const SizedBox(
-                      height: 8,
+                      height: 16,
                     ),
                     Text(
                       'Characters with name $characterName',
@@ -79,17 +79,22 @@ class MyApp extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(
-                      height: 8,
+                      height: 16,
                     ),
                     Expanded(
                       child: ListView.builder(
                         itemCount: result.data!['characters']['results'].length,
                         itemBuilder: (context, index) {
-                          return ListTile(
-                            title: Text(
-                                "Name: ${result.data!['characters']['results'][index]['name']}"),
-                            subtitle: Text(
-                                "Status: ${result.data!['characters']['results'][index]['status']} \nLocation: ${result.data!['characters']['results'][index]['location']['name']}"),
+                          return Wrap(
+                            children: [
+                              ListTile(
+                                title: Text(
+                                    "Name: ${result.data!['characters']['results'][index]['name']}"),
+                                subtitle: Text(
+                                    "Status: ${result.data!['characters']['results'][index]['status']} \nLocation: ${result.data!['characters']['results'][index]['location']['name']}"),
+                              ),
+                              const Divider(),
+                            ],
                           );
                         },
                       ),
