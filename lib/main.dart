@@ -21,24 +21,24 @@ class MyApp extends StatelessWidget {
       ),
     );
 
-    String carachterName = "Poopybutthole";
+    String characterName = "Poopybutthole";
 
     final rickCharacters = '''
- query characters {
-      characters(page: 1, filter: { name: "$carachterName" }) {
-        info {
-          count
-        }
-        results {
-          name
-          status
-          location{
-            name
+    query characters {
+          characters(page: 1, filter: { name: "$characterName" }) {
+            info {
+              count
+            }
+            results {
+              name
+              status
+              location{
+                name
+              }
+            }
           }
-        }
       }
-  }
-  ''';
+      ''';
 
     return GraphQLProvider(
       client: client,
@@ -61,7 +61,8 @@ class MyApp extends StatelessWidget {
               }
               if (result.data == null) {
                 return Center(
-                  child: Text('Sorry! no character whith name $carachterName'),
+                  child:
+                      Text('Sorry! no character with this name $characterName'),
                 );
               } else {
                 return Column(
@@ -70,7 +71,7 @@ class MyApp extends StatelessWidget {
                       height: 8,
                     ),
                     Text(
-                      'Characters with name $carachterName',
+                      'Characters with name $characterName',
                       style: const TextStyle(
                         color: Colors.black,
                         fontSize: 22,
